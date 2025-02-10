@@ -4,7 +4,6 @@ import useSWR from "swr"
 import TicketDisplay from "./components/TicketDisplay"
 import { useState, useEffect } from "react"
 import TicketSoldNotification from "./components/TicketSoldNotification"
-import { Button } from "@/components/ui/button"
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
