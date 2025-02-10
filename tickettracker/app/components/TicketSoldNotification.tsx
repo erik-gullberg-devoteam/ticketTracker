@@ -18,9 +18,10 @@ export default function TicketSoldNotification({ previousCount, currentCount, da
 			const ticketsSold = currentCount - previousCount
 			toast.success(`${ticketsSold} biljett${ticketsSold > 1 ? 'er' : ''} Såld${ticketsSold > 1 ? 'a' : ''} till ${day}!`, {
 				icon: "🎉",
+				duration: 8000,
 			})
 			setShowConfetti(true)
-			setTimeout(() => setShowConfetti(false), 5000) // Hide confetti after 5 seconds
+			setTimeout(() => setShowConfetti(false), 8000)
 		}
 	}, [currentCount, previousCount])
 
