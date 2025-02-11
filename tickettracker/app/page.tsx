@@ -9,10 +9,10 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Home() {
     const { data: fridayData, error: fridayError } = useSWR("https://billetto.se/api/events/1152946/venue", fetcher, {
-        refreshInterval: 5000,
+        refreshInterval: 10000,
     })
     const { data: saturdayData, error: saturdayError } = useSWR("https://billetto.se/api/events/1152947/venue", fetcher, {
-        refreshInterval: 5000,
+        refreshInterval: 10000,
     })
 
     const [prevFridayCount, setPrevFridayCount] = useState(() => {
