@@ -14,6 +14,12 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
     ({ className, value = 0, imageUrl = "https://erikgullberg.se/frank.png", ...props }, ref) => {
         const audio = imageUrl === "https://erikgullberg.se/frank.png" ? new Audio('https://erikgullberg.se/frankpratar.m4a') : new Audio("https://erikgullberg.se/bobpratar.m4a")
 
+        const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
+            audio.play()
+            e.currentTarget.style.animation = "none"
+            e.currentTarget.offsetHeight // trigger reflow
+            e.currentTarget.style.animation = `bounce 0.25s ease-in-out ${imageUrl === "https://erikgullberg.se/frank.png" ? 15 : 9}`        }
+
         return (
             <div className="relative">
                 <ProgressPrimitive.Root
@@ -42,7 +48,7 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
                         zIndex: 10, // ensure it's on top
                         transform: "scaleX(-1)" // mirror the image
                     }}
-                    onClick={() => audio.play()}
+                    onClick={handleClick}
                 />
             </div>
         )

@@ -76,3 +76,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scaleX(-1);
+  }
+  50% {
+    transform: translateY(-10px) scaleX(-1);
+  }
+}
