@@ -85,12 +85,14 @@ export default function Home() {
                     totalBooked={fridayData.data.attributes.total_booked + fridayData.data.attributes.total_reserved}
                     capacity={fridayData.data.attributes.capacity}
                     availableCapacity={fridayData.data.attributes.available_capacity}
+                    imgUrl="https://erikgullberg.se/frank.png"
                 />
                 <TicketDisplay
                     day="Lördag"
                     totalBooked={saturdayData.data.attributes.total_booked + saturdayData.data.attributes.total_reserved}
                     capacity={saturdayData.data.attributes.capacity}
                     availableCapacity={saturdayData.data.attributes.available_capacity}
+                    imgUrl="https://erikgullberg.se/bob.png"
                 />
             </div>
             {!isInitialLoad && (

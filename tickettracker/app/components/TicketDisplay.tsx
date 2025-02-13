@@ -6,9 +6,10 @@ interface TicketDisplayProps {
   totalBooked: number
   capacity: number
   availableCapacity: number
+  imgUrl: string
 }
 
-export default function TicketDisplay({ day, totalBooked, capacity, availableCapacity }: TicketDisplayProps) {
+export default function TicketDisplay({ day, totalBooked, capacity, availableCapacity, imgUrl }: TicketDisplayProps) {
   const percentageSold = (1 - (availableCapacity / capacity)) * 100
 
   return (
@@ -30,7 +31,7 @@ export default function TicketDisplay({ day, totalBooked, capacity, availableCap
               <span>Total:</span>
               <span className="font-bold">{capacity}</span>
             </div>
-            <Progress value={percentageSold} className="w-full bg-black" />
+            <Progress value={percentageSold} className="w-full bg-black" imageUrl={imgUrl} />
             <div className="text-center text-lg text-yellow-500">{percentageSold.toFixed(1)}% Sålt</div>
           </div>
         </CardContent>
