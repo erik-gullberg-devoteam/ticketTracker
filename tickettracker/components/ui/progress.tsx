@@ -17,8 +17,9 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
         const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
             audio.play()
             e.currentTarget.style.animation = "none"
-            e.currentTarget.offsetHeight // trigger reflow
-            e.currentTarget.style.animation = `bounce 0.25s ease-in-out ${imageUrl === "https://erikgullberg.se/frank.png" ? 15 : 9}`        }
+            void e.currentTarget.offsetHeight // trigger reflow
+            e.currentTarget.style.animation = `bounce 0.25s ease-in-out ${imageUrl === "https://erikgullberg.se/frank.png" ? 15 : 9}`
+        }
 
         return (
             <div className="relative">
