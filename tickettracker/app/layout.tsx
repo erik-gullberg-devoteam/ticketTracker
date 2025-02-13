@@ -10,7 +10,6 @@ const western = Playfair_Display({
 
 export const metadata = {
     title: "Bröderna Dalton - Ticket Tracker",
-    description: "Track ticket sales for Bröderna Dalton shows",
 }
 
 export default function RootLayout({
